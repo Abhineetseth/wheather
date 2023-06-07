@@ -1,0 +1,164 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Wheather </title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"> </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"> </script>
+
+ </head>
+ <body>
+  <style rel="stylesheet" href="style.css"> </style>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <a class="navbar-brand" href="#" style="font-weight:600">Wheather app </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"> </span>
+         </button>
+      
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+               <a class="nav-link" href="#">Home  <span class="sr-only">(current) </span> </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">About </a>
+             </li>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                usage
+               </a>
+               <div class="dropdown-menu">
+                 <a class="dropdown-item" href="#">Delhi </a>
+                 <a class="dropdown-item" href="#">SEATTLE </a>
+                 <div class="dropdown-divider"> </div>
+                 <a class="dropdown-item" href="#">BANGALORE </a>
+               </div>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link disabled">Disabled </a>
+             </li>
+           </ul>
+           <form class="form-inline my-2 my-lg-0">
+             <input id="city" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Search </button>
+           </form>
+         </div>
+       </nav>
+ <h1 style="text-align: center; margin-top:1cm; margin-bottom:0.6cm;" >Wheather for <span id="cityname"></span> </h1>
+
+       <div class="container">
+       <div class="container">
+         <div class="card-deck mb-3 text-center">
+           <div class="card mb-4 shadow-sm">
+             <div class="card-header">
+               <h4 class="my-0 font-weight-normal">Tempreature </h4>
+             </div>
+             <div class="card-body">
+               <h1 class="card-title pricing-card-title" id="temp"> <span id="temp2"> </span> <small class="text-muted"><span>&#8451;</span> </small> </h1>
+               <ul class="list-unstyled mt-3 mb-4">
+                 <li>Tempreture is <span id="temp3"> </span> </li>
+                 <li>Min temp is <span id="max_temp"> </span> </li>
+                 <li>Max temp is <span id="min_temp"> </span> </li>
+              
+               </ul>
+             
+             </div>
+           </div>
+           <div class="card mb-4 shadow-sm">
+             <div class="card-header">
+               <h4 class="my-0 font-weight-normal">Humidity info </h4>
+             </div>
+             <div class="card-body">
+               <h1 class="card-title pricing-card-title"> <span id="humidity2"> </span> <small class="text-muted">% </small> </h1>
+               <ul class="list-unstyled mt-3 mb-4">
+                 <li>cloud_pct  is  <span id="cloud_pct"> </span> </li>
+                 <li>feels like  is <span id="feels_like"> </span> </li>
+                 <li>Humidity  is <span id="humidity"> </span> </li>
+                 <li>Sunrise time  is <span id="sunrise"> </span> </li>
+                 <li>Sunset time is <span id="sunset"> </span> </li>
+               </ul>
+             
+             </div>
+           </div>
+           <div class="card mb-4 shadow-sm">
+             <div class="card-header">
+               <h4 class="my-0 font-weight-normal">Wind info</h4>
+             </div>
+             <div class="card-body">
+               <h1 class="card-title pricing-card-title"><span id="wind_speed2"> </span>  <small class="text-muted">Km/hr </small> </h1>
+               <ul class="list-unstyled mt-3 mb-4">
+                 <li>Wind degrees  is <span id="wind_degrees"> </span> </li>
+                 <li>Wind Speed  is <span id="wind_speed"> </span> </li>
+               
+               </ul>
+             </div>
+           </div>
+         </div>
+      
+         <h2 style="text-align: center; margin-top:1cm; margin-bottom:0.6cm;">Wheather for otherplaces </h2>
+
+       </div>
+       <table class="table">
+         <thead class="thead">
+           <tr style="text-align: center;">
+             <th scope="col">City </th>
+             <th scope="col">cloud_pct </th>
+
+             <th scope="col">feels_like </th>
+            
+                 <th scope="col">humidity </th>
+            
+                     <th scope="col">max_temp </th>
+            
+                         <th scope="col">min_temp </th>
+            
+                             <th scope="col">sunrise </th>
+            
+                                 <th scope="col">sunset </th>
+            
+                                     <th scope="col">temp </th>
+            
+                                         <th scope="col">wind_degrees </th>
+            
+                                             <th scope="col">wind_speed </th>
+           </tr>
+         </thead>
+         <tbody style="text-align:center">
+           <tr >
+             <th scope="row">Delhi </th>
+             <td  id="a1">1 </td>
+             <td id="a2">2 </td>
+             <td id="a3">3 </td>
+             <td id="a4">4 </td>
+             <td id="a5">5 </td>
+             <td id="a6">6 </td>
+             <td id="a7">7 </td>
+             <td id="a8">8 </td>
+             <td id="a9">9 </td>
+             <td id="a0">10 </td>
+           </tr>
+           <tr>
+             <th scope="row">Sambalpur </th>
+             <td id="b1">1 </td>
+             <td id="b2">2 </td>
+             <td id="b3">3 </td>
+             <td id="b4">4 </td>
+             <td id="b5">5 </td>
+             <td id="b6">6 </td>
+             <td id="b7">7 </td>
+             <td id="b8">8 </td>
+             <td id="b9">9 </td>
+             <td id="b0">10 </td>
+           </tr>
+           <tr>
+             
+         </tbody>
+       </table>
+      
+       </div>
+ <script src="script.js"> </script>
+ </body>
+ </html>
