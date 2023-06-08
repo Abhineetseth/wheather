@@ -9,7 +9,7 @@ const options = {
 };
 
 const getwheather=(city)=>{
-const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Delhi`;
+const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`;
 cityname.innerHTML=city;
 fetch(url,options)
 .then(response => response.json())
